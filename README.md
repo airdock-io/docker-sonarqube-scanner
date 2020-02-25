@@ -11,6 +11,8 @@
 
 
 ![Sonarqube](https://www.sonarqube.org/logos/index/sonarqube-logo.png)
+
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/airdock-io/docker-sonarqube-scanner?sort=semver&style=flat-square)
 # docker-sonarqube-scanner
 A docker container to run sonarqube scanner
 
@@ -43,5 +45,5 @@ Some of these vars are defined in the Dockerfile and others are not. Vars used b
 
 | Var                     | Default Value |
 |-------------------------|---------------|
-| SONAR_SCANNER_VERSION   | 4.0.0.1744    |
+| SONAR_SCANNER_VERSION   | 4.1.0.1829   |
 | JAVA_HOME               | /usr          |
