@@ -13,12 +13,7 @@ jobs:
   - stage: Test Image
     script:
       - docker build --tag sonarqube-scanner:ci .
-      - docker run --rm -it \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        -v "$(pwd)":"$(pwd)" \
-        -w "$(pwd)" \
-        -e CI="true" \
-        wagoodman/dive:latest --ci-config=.dive.yaml sonarqube-scanner:ci
+      - docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v "$(pwd)":"$(pwd)" -w "$(pwd)" -e CI="true" wagoodman/dive:latest --ci-config=.dive.yaml sonarqube-scanner:ci
       - docker run -it --rm \
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v ${PWD}:/test \
