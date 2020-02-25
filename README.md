@@ -1,4 +1,4 @@
-[![dockeri.co](https://dockeri.co/image/airdock/docker-sonarqube-scanner)](https://hub.docker.com/r/airdock/docker-sonarqube-scanner)
+[![dockeri.co](https://dockeri.co/image/airdock/sonarqube-scanner)](https://hub.docker.com/r/airdock/sonarqube-scanner)
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://GitHub.com/airdock-io/docker-sonarqube-scanner/graphs/commit-activity)
 [![Ask Us Anything !](https://img.shields.io/badge/Ask%20us-anything-1abc9c.svg?style=for-the-badge)](https://github.com/airdock-io)
@@ -36,7 +36,7 @@ See https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/ for more infor
 
 Then to use the image locally: ```docker run --rm -v ${PWD}/sonar-scanner.properties:/var/sonar-scanner/conf/sonar-scanner.properties -v path/to/your/code:/var/app sonarqube-scanner:latest```
 
-<!-- Or to use the image form docker hub: ```docker run --rm -v ${PWD}/sonar-scanner.properties:/var/sonar-scanner/conf/sonar-scanner.properties -v path/to/your/code:/var/app ``` -->
+Or to use the image form docker hub: ```docker run --rm -v ${PWD}/sonar-scanner.properties:/var/sonar-scanner/conf/sonar-scanner.properties -v path/to/your/code:/var/app airdock/sonarqube-scanner:latest```
 
 ## Environment variables
 Some of these vars are defined in the Dockerfile and others are not. Vars used by the entrypoint and command should be defined in dockerfile, vars relative to the phrasea php app are defined (if not in compose *environment* section) in entrypoint with a default value.
