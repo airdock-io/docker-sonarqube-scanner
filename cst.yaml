@@ -2,7 +2,7 @@ schemaVersion: 2.0.0
 metadataTest:
   env:
     - key: SONAR_SCANNER_VERSION
-      value: 4.0.0.1744
+      value: 4.1.0.1829
     - key: JAVA_HOME
       value: /usr
   # entrypoint: []
