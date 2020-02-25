@@ -45,5 +45,5 @@ Some of these vars are defined in the Dockerfile and others are not. Vars used b
 
 | Var                     | Default Value |
 |-------------------------|---------------|
-| SONAR_SCANNER_VERSION   | 4.2.0.1873   |
+| SONAR_SCANNER_VERSION   | 4.3.0.2102    |
 | JAVA_HOME               | /usr          |
