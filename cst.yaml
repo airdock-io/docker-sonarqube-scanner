@@ -1,0 +1,22 @@
+schemaVersion: 2.0.0
+metadataTest:
+  env:
+    - key: SONAR_SCANNER_VERSION
+      value: 4.0.0.1744
+    - key: JAVA_HOME
+      value: /usr
+  # entrypoint: []
+  # cmd: ["/bin/bash"]
+  workdir: "/var"
+fileExistenceTests:
+- name: 'sonar-scanner bin'
+  path: '/var/sonar-scanner/bin'
+  shouldExist: true
+- name: 'sonar-scanner'
+  path: '/var/sonar-scanner'
+  shouldExist: true
+commandTests:
+  - name: "sonar-scanner"
+    command: "which"
+    args: ["sonar-scanner"]
+    expectedOutput: ["/var/sonar-scanner/bin/sonar-scanner"]
