@@ -1,4 +1,4 @@
-[![dockeri.co](https://dockeri.co/image/airdock/sonarqube-scanner)](https://hub.docker.com/r/airdock/sonarqube-scanner)
+[![dockeri.co](https://dockeri.co/image/airdock/docker-sonarqube-scanner)](https://hub.docker.com/r/airdock/docker-sonarqube-scanner)
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://GitHub.com/airdock-io/docker-sonarqube-scanner/graphs/commit-activity)
 [![Ask Us Anything !](https://img.shields.io/badge/Ask%20us-anything-1abc9c.svg?style=for-the-badge)](https://github.com/airdock-io)
@@ -6,7 +6,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/airdock-io/docker-sonarqube-scanner.svg?style=flat-square)](https://GitHub.com/airdock-io/docker-sonarqube-scanner/issues/)
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/airdock-io/docker-sonarqube-scanner.svg?style=flat-square)](https://GitHub.com/airdock-io/docker-sonarqube-scanner/issues?q=is%3Aissue+is%3Aclosed)
-[![Travis Ci Status](https://img.shields.io/travis/airdock-io/docker-sonarqube-scanner?style=flat-square)](https://travis-ci.com/airdock-io/docker-sonarqube-scanner)
+[![Travis Ci Status](https://img.shields.io/travis/com/airdock-io/docker-sonarqube-scanner?style=flat-square)](https://travis-ci.com/airdock-io/docker-sonarqube-scanner)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://lbesson.mit-license.org/)
 
 
