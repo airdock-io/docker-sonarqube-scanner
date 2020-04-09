@@ -33,19 +33,19 @@ docker_process_init_files() {
 
 docker_add_certs() {
 	echo
-	export SONAR_SCANNER_KEYSTORE=/usr/local/sonarqube.jks
+	export SONAR_SCANNER_TRUSTSTORE=/usr/local/sonarqube.jks
 	export SONAR_SCANNER_STOREPASS=$(openssl rand -base64 32)
-	export SONAR_SCANNER_OPTS="-Djavax.net.ssl.keyStore=${SONAR_SCANNER_KEYSTORE} -Djavax.net.ssl.keyStorePassword=${SONAR_SCANNER_STOREPASS}"
+	export SONAR_SCANNER_OPTS="-Djavax.net.ssl.trustStore=${SONAR_SCANNER_TRUSTSTORE} -Djavax.net.ssl.trustStorePassword=${SONAR_SCANNER_STOREPASS}"
 	local f
 	for f; do
 		openssl x509 -in $f -out "$f.pem" -outform PEM >> /dev/stdout
-		keytool -import -noprompt -trustcacerts -alias sonarqube -storepass $SONAR_SCANNER_STOREPASS -keystore $SONAR_SCANNER_KEYSTORE -file "$f.pem" >> /dev/stdout
-		echo "[IMPORTANT] Keystore is located: ${SONAR_SCANNER_KEYSTORE}"
-		echo "[IMPORTANT] Use SONAR_SCANNER_STOREPASS and SONAR_SCANNER_KEYSTORE env vars to integrate to any command"
+		keytool -import -noprompt -trustcacerts -alias sonarqube -storepass $SONAR_SCANNER_STOREPASS -keystore $SONAR_SCANNER_TRUSTSTORE -file "$f.pem" >> /dev/stdout
+		echo "[IMPORTANT] TrustStore is located: ${SONAR_SCANNER_TRUSTSTORE}"
+		echo "[IMPORTANT] Use SONAR_SCANNER_STOREPASS and SONAR_SCANNER_TRUSTSTORE env vars to integrate to any command"
 		echo
 	done
 }
-[ -d "/docker-entrypoint-certs.d" ] && echo "Adding certs to Keystore from /docker-entrypoint-certs.d/*" >> /dev/stdout && docker_add_certs /docker-entrypoint-certs.d/*
+[ -d "/docker-entrypoint-certs.d" ] && echo "Adding certs to TrustStore from /docker-entrypoint-certs.d/*" >> /dev/stdout && docker_add_certs /docker-entrypoint-certs.d/*
 [ ! -d "/docker-entrypoint-certs.d" ] && echo "No Certs to add to keystore"
 
 # Resume to "official" entrypoint
