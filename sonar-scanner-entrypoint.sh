@@ -38,8 +38,8 @@ docker_add_certs() {
 	export SONAR_SCANNER_OPTS="-Djavax.net.ssl.keyStore=${SONAR_SCANNER_KEYSTORE} -Djavax.net.ssl.keyStorePassword=${SONAR_SCANNER_STOREPASS}"
 	local f
 	for f; do
-		openssl x509 -in $f -out "$f.pem" -outform PEM
-		keytool -import -noprompt -trustcacerts -alias sonarqube -storepass $SONAR_SCANNER_STOREPASS -keystore $SONAR_SCANNER_KEYSTORE -file "$f.pem"
+		openssl x509 -in $f -out "$f.pem" -outform PEM >> /dev/stdout
+		keytool -import -noprompt -trustcacerts -alias sonarqube -storepass $SONAR_SCANNER_STOREPASS -keystore $SONAR_SCANNER_KEYSTORE -file "$f.pem" >> /dev/stdout
 		echo "[IMPORTANT] Keystore is located: ${SONAR_SCANNER_KEYSTORE}"
 		echo "[IMPORTANT] Use SONAR_SCANNER_STOREPASS and SONAR_SCANNER_KEYSTORE env vars to integrate to any command"
 		echo
