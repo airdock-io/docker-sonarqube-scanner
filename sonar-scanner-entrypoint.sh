@@ -23,14 +23,6 @@ docker_process_init_files() {
 }
 [ -d "/docker-entrypoint-init.d" ] && docker_process_init_files /docker-entrypoint-init.d/*
 
-# if [ -d "/path/to/dir" ] 
-# then
-#     echo "Directory /path/to/dir exists." 
-# else
-#     echo "Error: Directory /path/to/dir does not exists."
-# fi
-# docker_process_init_files /docker-entrypoint-init.d/*
-
 docker_add_certs() {
 	echo
 	export SONAR_SCANNER_TRUSTSTORE=/usr/local/sonarqube.jks
@@ -46,7 +38,7 @@ docker_add_certs() {
 	done
 }
 [ -d "/docker-entrypoint-certs.d" ] && echo "Adding certs to TrustStore from /docker-entrypoint-certs.d/*" >> /dev/stdout && docker_add_certs /docker-entrypoint-certs.d/*
-[ ! -d "/docker-entrypoint-certs.d" ] && echo "No Certs to add to keystore"
+[ ! -d "/docker-entrypoint-certs.d" ] && echo "No Certs to add to TrustStore"
 
 # Resume to "official" entrypoint
 echo "Resuming to old entrypoint" >> /dev/stdout

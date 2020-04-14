@@ -47,3 +47,6 @@ Some of these vars are defined in the Dockerfile and others are not. Vars used b
 |-------------------------|---------------|
 | SONAR_SCANNER_VERSION   | 4.3.0.2102    |
 | JAVA_HOME               | /usr          |
+
+## TrustStore / HTTPS
+When using sonarqube over HTTPS you may need to add your certs to TrustStore. In order to do so jsut mount your certs in the folder ```/docker-entrypoint-certs.d```, they will be injected during the entrypoint execution.
