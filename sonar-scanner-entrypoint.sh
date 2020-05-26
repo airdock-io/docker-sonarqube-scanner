@@ -27,7 +27,7 @@ docker_add_certs() {
 	echo
 	export SONAR_SCANNER_TRUSTSTORE=/usr/local/sonarqube.jks
 	export SONAR_SCANNER_STOREPASS=$(openssl rand -base64 32)
-	export SONAR_SCANNER_OPTS="-Djavax.net.ssl.trustStore=${SONAR_SCANNER_TRUSTSTORE} -Djavax.net.ssl.trustStorePassword=${SONAR_SCANNER_STOREPASS}"
+	export SONAR_SCANNER_OPTS="${SONAR_SCANNER_OPTS} -Djavax.net.ssl.trustStore=${SONAR_SCANNER_TRUSTSTORE} -Djavax.net.ssl.trustStorePassword=${SONAR_SCANNER_STOREPASS}"
 	local f
 	for f; do
 		openssl x509 -in $f -out "$f.pem" -outform PEM >> /dev/stdout

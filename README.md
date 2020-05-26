@@ -43,10 +43,11 @@ Or to use the image form docker hub: ```docker run --rm -v ${PWD}/sonar-scanner.
 ## Environment variables
 Some of these vars are defined in the Dockerfile and others are not. Vars used by the entrypoint and command should be defined in dockerfile, vars relative to the phrasea php app are defined (if not in compose *environment* section) in entrypoint with a default value.
 
-| Var                     | Default Value |
-|-------------------------|---------------|
-| SONAR_SCANNER_VERSION   | 4.3.0.2102    |
-| JAVA_HOME               | /usr          |
+| Var                     | Default Value                     |
+|-------------------------|-----------------------------------|
+| SONAR_SCANNER_VERSION   | 4.3.0.2102                        |
+| JAVA_HOME               | /usr                              |
+| SONAR_SCANNER_OPTS      | trustStore and trustStorePassword |
 
 ## TrustStore / HTTPS
 When using sonarqube over HTTPS you may need to add your certs to TrustStore. In order to do so jsut mount your certs in the folder ```/docker-entrypoint-certs.d```, they will be injected during the entrypoint execution.
